@@ -27,18 +27,18 @@
 <script>
 var map = new BMapGL.Map('container');
 map.centerAndZoom(new BMapGL.Point(104.724654,31.465409), 15);
-
+map.setMapStyleV2({     
+  styleId: 'b15f705991f5b399da94f26f9bd3d766'
+});
 
 
 //鼠标滚轴
 map.enableScrollWheelZoom(true); 
 
-var myIcon = new BMap.Icon("coordinatepoint.png", new BMap.Size(100,100));
-myIcon.setImageSize(new BMap.Size(40,40));//设置图标大小
+
 
 // 创建点标记 绵阳站
-var point1 = new BMapGL.Point(104.724654,31.465410,{icon:myIcon});
-new BMapGL.Size(100, 100);
+var point1 = new BMapGL.Point(104.724654,31.465410);
 // 创建点标记
 var marker = new BMapGL.Marker(point1);
 // new BMapGL.Size(50, 50);
