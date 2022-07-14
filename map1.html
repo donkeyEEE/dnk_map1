@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>蜀南游记图</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <style>
+    body,
+    html,
+    #container {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        font-family: "微软雅黑";
+    }
+    </style>
+    
+    <script src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=Y7kGysTrdMdSFQqzDoGksOjByqZEAZym"></script>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+var map = new BMapGL.Map('container');
+map.centerAndZoom(new BMapGL.Point(104.724654,31.465409), 15);
+
+
+
+//鼠标滚轴
+map.enableScrollWheelZoom(true); 
+
+var myIcon = new BMap.Icon("coordinatepoint.png", new BMap.Size(100,100));
+myIcon.setImageSize(new BMap.Size(40,40));//设置图标大小
+
+// 创建点标记 绵阳站
+var point1 = new BMapGL.Point(104.724654,31.465410,{icon:myIcon});
+new BMapGL.Size(100, 100);
+// 创建点标记
+var marker = new BMapGL.Marker(point1);
+// new BMapGL.Size(50, 50);
+map.addOverlay(marker);
+// 创建信息窗口
+var opts1 = {
+    width: 200,
+    height: 100,
+    title: '绵阳火车站'
+};
+var infoWindow1 = new BMapGL.InfoWindow('7:32出发', opts1);
+// 点标记添加点击事件
+marker.addEventListener('click', function () {
+    map.openInfoWindow(infoWindow1, point1); // 开启信息窗口
+});
+
+// 创建点标记 成都东站
+var point2 = new BMapGL.Point(104.147618,30.635065);
+// 创建点标记
+var marker = new BMapGL.Marker(point2);
+map.addOverlay(marker);
+// 创建信息窗口
+var opts2 = {
+    width: 200,
+    height: 100,
+    title: '成都东站'
+};
+var infoWindow2 = new BMapGL.InfoWindow('中转', opts2);
+// 点标记添加点击事件
+marker.addEventListener('click', function () {
+    map.openInfoWindow(infoWindow2, point2); // 开启信息窗口
+});
+
+
+
+// 创建点标记   长宁站
+var point3 = new BMapGL.Point(104.935467,28.601496);
+
+// 创建点标记
+var marker = new BMapGL.Marker(point3);
+map.addOverlay(marker);
+// 创建信息窗口
+var opts3 = {
+    width: 200,
+    height: 100,
+    title: '长宁站'
+};
+var infoWindow3 = new BMapGL.InfoWindow("下车", opts3);
+// 点标记添加点击事件
+marker.addEventListener('click', function () {
+    map.openInfoWindow(infoWindow3, point3); // 开启信息窗口
+});
+
+
+// 创建点标记   蜀南竹海龙吟山庄   105.013646,28.480813
+var point4 = new BMapGL.Point(105.013646,28.480813);
+
+// 创建点标记
+var marker = new BMapGL.Marker(point4);
+map.addOverlay(marker);
+// 创建信息窗口
+var opts4 = {
+    width: 200,
+    height: 100,
+    title: '龙吟山庄'
+};
+var infoWindow4 = new BMapGL.InfoWindow("", opts4);
+// 点标记添加点击事件
+marker.addEventListener('click', function () {
+    map.openInfoWindow(infoWindow4, point4); // 开启信息窗口
+});
+
+
+
+
+// 创建点标记    天宝寨 105.025918,28.462864
+var point5 = new BMapGL.Point(105.025918,28.462864);
+
+// 创建点标记
+var marker = new BMapGL.Marker(point5);
+map.addOverlay(marker);
+// 创建信息窗口
+var opts6 = {
+    width: 200,
+    height: 100,
+    title: '天宝寨'
+};
+var infoWindow5 = new BMapGL.InfoWindow("", opts6);
+// 点标记添加点击事件
+marker.addEventListener('click', function () {
+    map.openInfoWindow(infoWindow5, point5); // 开启信息窗口
+});
+
+
+
+ 
+// 创建点标记  七彩瀑布 105.043095,28.495475
+var point6 = new BMapGL.Point(105.043095,28.495475);
+
+// 创建点标记
+var marker = new BMapGL.Marker(point6);
+map.addOverlay(marker);
+// 创建信息窗口
+var opts7 = {
+    width: 200,
+    height: 100,
+    title: '七彩瀑布'
+};
+var infoWindow6 = new BMapGL.InfoWindow('', opts7);
+// 点标记添加点击事件
+marker.addEventListener('click', function () {
+    map.openInfoWindow(infoWindow6, point6); // 开启信息窗口
+});
+
+
+
+// 创建点标记   翡翠长廊  105.012309,28.472984
+var point7 = new BMapGL.Point(105.012309,28.472984);
+
+// 创建点标记
+var marker = new BMapGL.Marker(point7);
+map.addOverlay(marker);
+// 创建信息窗口
+var opts8 = {
+    width: 200,
+    height: 100,
+    title: '翡翠长廊'
+};
+var infoWindow7 = new BMapGL.InfoWindow('还在河南境界，看到很多田埂。整个河南省地势呈望北向南、承东启西之势，地势西高东低，由平原和盆地、山地、丘陵、水面构成；地跨海河、黄河、淮河、长江四大流域。', opts8);
+// 点标记添加点击事件
+marker.addEventListener('click', function () {
+    map.openInfoWindow(infoWindow7, point7); // 开启信息窗口
+});
+
+
+
+// 创建点标记   忘忧谷 104.990131,28.462677
+var point8 = new BMapGL.Point(104.990131,28.462677);
+
+// 创建点标记
+var marker = new BMapGL.Marker(point8);
+map.addOverlay(marker);
+// 创建信息窗口
+var opts9 = {
+    width: 200,
+    height: 100,
+    title: '忘忧谷'
+};
+var infoWindow8 = new BMapGL.InfoWindow(' ', opts9);
+// 点标记添加点击事件
+marker.addEventListener('click', function () {
+    map.openInfoWindow(infoWindow8, point8); // 开启信息窗口
+});
+
+// 创建点标记  海中海   105.030245,28.47156
+var point9 = new BMapGL.Point(105.030245,28.47156);
+
+// 创建点标记
+var marker = new BMapGL.Marker(point9);
+map.addOverlay(marker);
+// 创建信息窗口
+var opts00 = {
+    width: 200,
+    height: 100,
+    title: '海中海 '
+};
+var infoWindow9 = new BMapGL.InfoWindow('', opts00)
+marker.addEventListener('click', function () {
+    map.openInfoWindow(infoWindow9, point9); // 开启信息窗口
+});
+
+
+// 创建点标记   仙禹洞 105.023014,28.465327
+var point0 = new BMapGL.Point(105.023014,28.465327);
+
+// 创建点标记
+var marker = new BMapGL.Marker(point0);
+map.addOverlay(marker);
+// 创建信息窗口
+var opts0 = {
+    width: 200,
+    height: 100,
+    title: '仙禹洞'
+};
+var infoWindow0 = new BMapGL.InfoWindow('', opts0);
+// 点标记添加点击事件
+marker.addEventListener('click', function () {
+    map.openInfoWindow(infoWindow0, point0); // 开启信息窗口
+});
+
+
+
+// 绘制线
+var polyline = new BMapGL.Polyline([
+    point1,
+    point2,
+    point3,
+    point4,
+], {
+    strokeColor: 'blue',
+    strokeWeight: 8,
+    strokeOpacity: 0.5
+});
+map.addOverlay(polyline);
+
+
+// 2. 通过方法方式设置地图允许的最大最小级别
+map.setMinZoom(5);
+map.setMaxZoom(20);
+
+
+</script>
+
