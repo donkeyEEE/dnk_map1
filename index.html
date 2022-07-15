@@ -28,13 +28,22 @@
     // 百度地图API功能
     var map = new BMap.Map("allmap");
     map.centerAndZoom(new BMap.Point(104.724654,31.465410), 11);
-
     map.enableScrollWheelZoom(true);
-   
+    /*
+    // 个性化地图
+    map.setMapStyleV2({     
+        styleId: 'ddc03308c6c1f10db22a3f1f6781bf23'
+    });
+*/
     //起始地
     var p1 = new BMap.Point(104.724654,31.465410);
     var p2 = new BMap.Point(100.299287,29.042617);
-   
+    
+    // 途径地 
+    var point3 = new BMap.Point(103.653534,30.994257);
+    
+    var point4 = new BMap.Point(103.653534,30.994257);
+    var point5 = new BMap.Point(102.364357,31.002548);
     //行车路线规划实例
     var driving = new BMap.DrivingRoute(map, {
       renderOptions: { map: map, autoViewport: true }, onPolylinesSet: function (Route) {
@@ -58,7 +67,7 @@
     var n = new BMap.Marker(p2);
     n.setIcon(new BMap.Icon('https://s3.bmp.ovh/imgs/2022/04/19/cc19a1e175c642da.png', new BMap.Size(20, 26), { anchor: new BMap.Size(5, 26) }));
     map.addOverlay(n);
-    driving.search(p1, p2);//waypoints表示途经点
+    driving.search(p1, p2,{waypoints:[point3,point4,point5]});//waypoints表示途经点
    
     // 创建点标记 绵阳站
     var point1 = new BMap.Point(104.724654,31.465410);
@@ -94,5 +103,123 @@
     marker.addEventListener('click', function () {
         map.openInfoWindow(infoWindow2, point2); // 开启信息窗口
     });
+
+
+    // 创建点标记 都江堰  103.653534,30.994257
+
+    // 创建点标记
+    var marker = new BMap.Marker(point3);
+    map.addOverlay(marker);
+    // 创建信息窗口
+    var opts3 = {
+        width: 200,
+        height: 100,
+        title: '都江堰'
+    };
+    var infoWindow3 = new BMap.InfoWindow('', opts3);
+    // 点标记添加点击事件
+    marker.addEventListener('click', function () {
+        map.openInfoWindow(infoWindow3, point3); // 开启信息窗口
+    });
+
+
+
+    // 创建点标记 四姑娘山  102.818742,31.035123
+
+    // 创建点标记
+    var marker = new BMap.Marker(point4);
+    map.addOverlay(marker);
+    // 创建信息窗口
+    var opts4 = {
+        width: 200,
+        height: 100,
+        title: '都江堰'
+    };
+    var infoWindow4 = new BMap.InfoWindow('', opts4);
+    // 点标记添加点击事件
+    marker.addEventListener('click', function () {
+        map.openInfoWindow(infoWindow4, point4); // 开启信息窗口
+    });
+
+
+    // 创建点标记 小金县  102.364357,31.002548
+   
+    // 创建点标记
+    var marker = new BMap.Marker(point5);
+    map.addOverlay(marker);
+    // 创建信息窗口
+    var opts5 = {
+        width: 200,
+        height: 100,
+        title: '小金县'
+    };
+    var infoWindow5 = new BMap.InfoWindow('', opts5);
+    // 点标记添加点击事件
+    marker.addEventListener('click', function () {
+        map.openInfoWindow(infoWindow5, point5); // 开启信息窗口
+    });
+
+
+
+    // 创建点标记 康定市   101.955546,30.003813
+    var point6 = new BMap.Point(101.955546,30.003813);
+    // 创建点标记
+    var marker = new BMap.Marker(point6);
+    map.addOverlay(marker);
+    // 创建信息窗口
+    var opts6 = {
+        width: 200,
+        height: 100,
+        title: '都江堰'
+    };
+    var infoWindow6 = new BMap.InfoWindow('', opts6);
+    // 点标记添加点击事件
+    marker.addEventListener('click', function () {
+        map.openInfoWindow(infoWindow6, point6); // 开启信息窗口
+    });
+
+
+
+    // 创建点标记 雅江县  101.023949,30.041572
+    var point7 = new BMap.Point(101.023949,30.041572);
+    // 创建点标记
+    var marker = new BMap.Marker(point7);
+    map.addOverlay(marker);
+    // 创建信息窗口
+    var opts7 = {
+        width: 200,
+        height: 100,
+        title: '雅江县'
+    };
+    var infoWindow7 = new BMap.InfoWindow('', opts7);
+    // 点标记添加点击事件
+    marker.addEventListener('click', function () {
+        map.openInfoWindow(infoWindow7, point7); // 开启信息窗口
+    });
+
+
+
+    // 创建点标记 稻城亚丁风景区  100.293273,28.464938
+    var point8 = new BMap.Point(100.293273,28.464938);
+    // 创建点标记
+    var marker = new BMap.Marker(point8);
+    map.addOverlay(marker);
+    // 创建信息窗口
+    var opts8 = {
+        width: 200,
+        height: 100,
+        title: '稻城亚丁风景区'
+    };
+    var infoWindow8 = new BMap.InfoWindow('', opts8);
+    // 点标记添加点击事件
+    marker.addEventListener('click', function () {
+        map.openInfoWindow(infoWindow8, point8); // 开启信息窗口
+    });
+
+
+
+    // 2. 通过方法方式设置地图允许的最大最小级别
+    map.setMinZoom(4);
+    map.setMaxZoom(20);
 
   </script>
